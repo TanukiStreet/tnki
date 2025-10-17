@@ -152,6 +152,7 @@ stk_peek(struct stk_node *context)
 #define stk_foreach(var, context)                                              \
     for ((var) = stk_peek(context); (var) != (context); (var) = (var)->next)
 
+/* useful for node deletion */
 #define stk_foreach_safe(var, tvar, context)                                   \
     for ((var) = stk_peek(context);                                            \
          (var) != (context) && ((tvar) = (var)->next, 1);                      \
